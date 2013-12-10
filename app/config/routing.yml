@@ -1,0 +1,4 @@
+face_manga_main:
+    resource: "@FaceMangaMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
