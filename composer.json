@@ -22,7 +22,8 @@
         "mopa/bootstrap-bundle": "dev-master",
         "twbs/bootstrap": "~3.0.0",
         "leafo/lessphp": "dev-master",
-        "jquery/jquery": "~2.0.0"
+        "jquery/jquery": "~2.0.0",
+        "knplabs/knp-menu-bundle": "dev-master"
     },
     "repositories": [
         {
@@ -61,9 +62,7 @@
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.4-dev"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

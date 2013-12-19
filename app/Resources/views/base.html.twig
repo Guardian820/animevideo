@@ -11,7 +11,19 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block navbar %}
+                {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, staticTop: false, inverse: false } %}
+                    {% block brand %}
+                        <a class="navbar-brand" href="#">FaceManga</a>
+                    {% endblock %}
+
+                    {% block menu %}
+                        {{ mopa_bootstrap_menu('main') }}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endblock %}
         {% block javascripts %}
             {% javascripts 
                 '@jquery_js'
