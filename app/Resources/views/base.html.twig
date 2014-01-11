@@ -25,9 +25,14 @@
                                 {{ 'logout'|trans }}
                             </a>
                         {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                            <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_login') }}">
-                                {{ 'login'|trans }}
-                            </a>
+                            <div class="pull-right">
+                                <a class="btn navbar-btn btn-default" href="{{ path('fos_user_security_login') }}">
+                                    {{ 'login'|trans }}
+                                </a>
+                                <a class="btn navbar-btn btn-success" href="{{ path('fos_user_registration_register') }}">
+                                    {{ 'register'|trans }}
+                                </a>
+                            </div>
                         {% endif %}
                     {% endblock %}
                 {% endembed %}
