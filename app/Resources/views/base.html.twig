@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{ 'brand'|trans }}{% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets '@MopaBootstrapBundle/Resources/public/bootstrap/dist/css/bootstrap.css' %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
@@ -15,15 +15,19 @@
             {% block navbar %}
                 {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, staticTop: false, inverse: false } %}
                     {% block brand %}
-                        <a class="navbar-brand" href="#">FaceManga</a>
+                        <a class="navbar-brand" href="#">{{ 'brand'|trans }}</a>
                     {% endblock %}
 
                     {% block menu %}
                         {{ mopa_bootstrap_menu('main') }}
                         {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                            <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_login') }}">Login</a>
+                            <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_login') }}">
+                                {{ 'login'|trans }}
+                            </a>
                         {% elseif is_granted('ROLE_USER') %}
-                            <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_logout') }}">Logout</a>
+                            <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_logout') }}">
+                                {{ 'logout'|trans }}
+                            </a>
                         {% endif %}
                     {% endblock %}
                 {% endembed %}

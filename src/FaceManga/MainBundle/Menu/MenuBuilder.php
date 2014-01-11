@@ -23,9 +23,9 @@ class MenuBuilder
         $menu = $this->factory->createItem('root', array(
             'navbar' => true
         ));
-        $menu->setLabel('FaceManga');
+        $menu->setLabel('brand');
 
-        $menu->addChild('Dashboard', array('route' => 'facemanga_main_dashboard'));
+        $menu->addChild('dashboard', array('route' => 'facemanga_main_dashboard'));
         
         return $menu;
     }
