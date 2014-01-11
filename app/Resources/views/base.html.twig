@@ -20,13 +20,13 @@
 
                     {% block menu %}
                         {{ mopa_bootstrap_menu('main') }}
-                        {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                            <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_login') }}">
-                                {{ 'login'|trans }}
-                            </a>
-                        {% elseif is_granted('ROLE_USER') %}
+                        {% if is_granted('ROLE_USER') %}
                             <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_logout') }}">
                                 {{ 'logout'|trans }}
+                            </a>
+                        {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                            <a class="btn navbar-btn btn-default pull-right" href="{{ path('fos_user_security_login') }}">
+                                {{ 'login'|trans }}
                             </a>
                         {% endif %}
                     {% endblock %}
