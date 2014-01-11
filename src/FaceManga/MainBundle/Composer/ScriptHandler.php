@@ -21,4 +21,17 @@ class ScriptHandler extends SensioHandler
         static::executeCommand($event, $appDir, 'doctrine:schema:update --force', $options['process-timeout']);
     }
     
+    public static function initAcl(CommandEvent $event)
+    {
+        $options = self::getOptions($event);
+        $appDir = $options['symfony-app-dir'];
+
+        if (!is_dir($appDir)) {
+            echo 'The symfony-app-dir ('.$appDir.') specified in composer.json was not found in '.getcwd().', can not clear the cache.'.PHP_EOL;
+            return;
+        }
+
+        static::executeCommand($event, $appDir, 'init:acl --dry-run', $options['process-timeout']);
+    }
+    
 }

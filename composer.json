@@ -47,7 +47,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
-            "FaceManga\\MainBundle\\Composer\\ScriptHandler::updateSchema"
+            "FaceManga\\MainBundle\\Composer\\ScriptHandler::updateSchema",
+            "FaceManga\\MainBundle\\Composer\\ScriptHandler::initAcl"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
