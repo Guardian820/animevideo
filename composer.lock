@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0fdf5207caf0e14de32df9dd9509db2b",
+    "hash": "7327b632dc7d9216fdb7909a53042485",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -742,6 +742,60 @@
                 "parameters management"
             ],
             "time": "2013-12-07 10:10:39"
+        },
+        {
+            "name": "jasny/twig-extensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jasny/twig-extensions.git",
+                "reference": "b74c5bc8dfd6a6f4f96b2f4feb53f1fc83b76030"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jasny/twig-extensions/zipball/b74c5bc8dfd6a6f4f96b2f4feb53f1fc83b76030",
+                "reference": "b74c5bc8dfd6a6f4f96b2f4feb53f1fc83b76030",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "twig/twig": "1.*"
+            },
+            "suggest": {
+                "ext-intl": "Required for the use of the LocalDate Twig extension",
+                "ext-pcre": "Required for the use of the PCRE Twig extension"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Jasny\\Twig": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnold Daniels",
+                    "email": "arnold@jasny.net",
+                    "homepage": "http://www.jasny.net"
+                }
+            ],
+            "description": "A set of useful Twig filters",
+            "homepage": "http://github.com/jasny/twig-extensions#README",
+            "keywords": [
+                "PCRE",
+                "array",
+                "date",
+                "datetime",
+                "preg",
+                "regex",
+                "templating",
+                "text",
+                "time"
+            ],
+            "time": "2013-10-25 15:30:15"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1941,7 +1995,8 @@
     "stability-flags": {
         "mopa/bootstrap-bundle": 20,
         "leafo/lessphp": 20,
-        "knplabs/knp-menu-bundle": 20
+        "knplabs/knp-menu-bundle": 20,
+        "jasny/twig-extensions": 20
     },
     "platform": {
         "php": ">=5.3.3"

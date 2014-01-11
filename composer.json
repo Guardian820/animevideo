@@ -24,7 +24,8 @@
         "leafo/lessphp": "dev-master",
         "jquery/jquery": "~2.0.0",
         "knplabs/knp-menu-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "~2.0"
+        "friendsofsymfony/user-bundle": "~2.0",
+        "jasny/twig-extensions": "dev-master"
     },
     "repositories": [
         {
