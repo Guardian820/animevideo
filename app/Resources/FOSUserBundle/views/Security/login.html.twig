@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets '@MopaBootstrapBundle/Resources/public/bootstrap/examples/signin/signin.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% if error %}
+            <div class="alert alert-danger">{{ error|trans }}</div>
+        {% endif %}
+        <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin" role="form">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <input type="text" class="form-control" name="_username" placeholder="{{ 'security.login.username'|trans }}" value="{{ last_username|default }}" required autofocus>
+            <input type="password" class="form-control" name="_password" placeholder="{{ 'security.login.password'|trans }}" required>
+            <label class="checkbox">
+                <input type="checkbox" name="_remember_me" value="on"> {{ 'security.login.remember_me'|trans }}
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'security.login.submit'|trans }}</button>
+        </form>
+    </div>
+{% endblock %}
