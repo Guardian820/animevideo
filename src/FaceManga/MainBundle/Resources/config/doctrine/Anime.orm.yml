@@ -1,0 +1,22 @@
+FaceManga\MainBundle\Entity\Anime:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        year:
+            type: integer
+        episodes:
+            type: integer
+        genre:
+            type: array
+        description:
+            type: text
+    lifecycleCallbacks: {  }
