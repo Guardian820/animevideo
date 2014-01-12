@@ -4,7 +4,9 @@
         <meta charset="UTF-8" />
         <title>{% block title %}{{ 'brand'|trans }}{% endblock %}</title>
         {% block stylesheets %}
-            {% stylesheets '@MopaBootstrapBundle/Resources/public/bootstrap/dist/css/bootstrap.css' %}
+            {% stylesheets 
+                '@MopaBootstrapBundle/Resources/public/bootstrap/dist/css/bootstrap.css'
+                '@MopaBootstrapBundle/Resources/public/bootstrap/examples/signin/signin.css' %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
         {% endblock %}
