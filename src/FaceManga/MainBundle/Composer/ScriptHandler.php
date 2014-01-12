@@ -31,7 +31,7 @@ class ScriptHandler extends SensioHandler
             return;
         }
 
-        static::executeCommand($event, $appDir, 'init:acl --dry-run', $options['process-timeout']);
+        static::executeCommand($event, $appDir, 'init:acl', $options['process-timeout']);
     }
     
 }
