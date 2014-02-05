@@ -25,7 +25,7 @@ class MenuBuilder
         ));
         $menu->setLabel('brand');
 
-        $menu->addChild('dashboard', array('route' => 'facemanga_main_dashboard'));
+        $menu->addChild('dashboard.title', array('route' => 'facemanga_main_dashboard'));
         
         return $menu;
     }
