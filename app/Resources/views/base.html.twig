@@ -24,7 +24,7 @@
                         {{ mopa_bootstrap_menu('main') }}
                         {% if is_granted('ROLE_USER') %}
                             <div class="pull-right">
-                                <a class="btn navbar-btn btn-info" href="{{ url('facemanga_main_anime_create') }}">
+                                <a class="btn navbar-btn btn-primary" href="{{ url('facemanga_main_anime_create') }}">
                                     {{ icon('plus') }}
                                 </a>
                                 <a class="btn navbar-btn btn-default" href="{{ path('fos_user_security_logout') }}">
