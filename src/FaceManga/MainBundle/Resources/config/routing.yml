@@ -1,3 +1,7 @@
 facemanga_main_dashboard:
     pattern:  /
     defaults: { _controller: FaceMangaMainBundle:Dashboard:index }
+    
+facemanga_main_anime_create:
+    pattern: /create
+    defaults: { _controller: FaceMangaMainBundle:Anime:create }
