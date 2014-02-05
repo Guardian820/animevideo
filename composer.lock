@@ -3,8 +3,54 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8a3acc59ee3d3ddff224f8443602bfb6",
+    "hash": "45646bc1ec5b6857ed5cc9140b8048a0",
     "packages": [
+        {
+            "name": "ajgl/composer-symlinker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ajgarlag/AjglComposerSymlinker.git",
+                "reference": "ee1b41bc12721dfcbae235300c5258b7e4ac958b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ajgarlag/AjglComposerSymlinker/zipball/ee1b41bc12721dfcbae235300c5258b7e4ac958b",
+                "reference": "ee1b41bc12721dfcbae235300c5258b7e4ac958b",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/filesystem": ">=2.1.0"
+            },
+            "require-dev": {
+                "composer/composer": "*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ajgl": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio J. García Lagar",
+                    "email": "aj@garcialagar.es",
+                    "homepage": "http://aj.garcialagar.es",
+                    "role": "developer"
+                }
+            ],
+            "description": "Composer script to symlink assets.",
+            "homepage": "https://github.com/ajgarlag/AjglComposerSymlinker",
+            "keywords": [
+                "assets",
+                "composer"
+            ],
+            "time": "2013-03-04 13:59:10"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.1.2",
@@ -1996,7 +2042,8 @@
         "mopa/bootstrap-bundle": 20,
         "leafo/lessphp": 20,
         "knplabs/knp-menu-bundle": 20,
-        "jasny/twig-extensions": 20
+        "jasny/twig-extensions": 20,
+        "ajgl/composer-symlinker": 20
     },
     "platform": {
         "php": ">=5.3.3"

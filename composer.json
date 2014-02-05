@@ -25,7 +25,8 @@
         "jquery/jquery": "~2.0.0",
         "knplabs/knp-menu-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "~2.0",
-        "jasny/twig-extensions": "dev-master"
+        "jasny/twig-extensions": "dev-master",
+        "ajgl/composer-symlinker": "dev-master"
     },
     "repositories": [
         {
@@ -47,6 +48,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
+            "Ajgl\\Composer\\ScriptSymlinker::createSymlinks",
             "FaceManga\\MainBundle\\Composer\\ScriptHandler::updateSchema",
             "FaceManga\\MainBundle\\Composer\\ScriptHandler::initAcl"
         ],
@@ -56,6 +58,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
+            "Ajgl\\Composer\\ScriptSymlinker::createSymlinks",
             "FaceManga\\MainBundle\\Composer\\ScriptHandler::updateSchema"
         ]
     },
@@ -67,6 +70,11 @@
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
+        },
+        "ajgl-symlinks": {
+            "": {
+                "twbs/bootstrap/dist/fonts/": "../web/fonts/"
+            }
         }
     },
     "minimum-stability": "dev"
