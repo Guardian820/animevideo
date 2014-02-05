@@ -1,3 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block title %}{{ 'dashboard.title'|trans }}{% endblock %}
+
+{% block content %}
+    {{ 'dashboard.anime_counter'|transchoice(anime_count) }}
+{% endblock %}

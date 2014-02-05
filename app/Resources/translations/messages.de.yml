@@ -5,3 +5,4 @@ register: Registrieren
 
 dashboard:
     title: Dashboard
+    anime_counter: '{0}Zur Zeit sind keine Animes gelistet.|[1, Inf]%count% Animes gelistet!'

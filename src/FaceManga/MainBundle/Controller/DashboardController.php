@@ -8,6 +8,12 @@ class DashboardController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('FaceMangaMainBundle:Dashboard:index.html.twig');
+        $repo = $this->getDoctrine()->getRepository('FaceMangaMainBundle:Anime');
+        $animeCount = count($repo->findAll());
+        
+        return $this->render('FaceMangaMainBundle:Dashboard:index.html.twig', array(
+            'anime_count' => $animeCount
+        ));
+        
     }
 }

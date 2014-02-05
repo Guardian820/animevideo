@@ -39,6 +39,9 @@
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
+            <div class="container" style="padding-top:40px">
+                {% block content %}{% endblock %}
+            </div>
         {% endblock %}
         {% block javascripts %}
             {% javascripts 
