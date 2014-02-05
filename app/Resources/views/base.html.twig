@@ -24,7 +24,7 @@
                         {{ mopa_bootstrap_menu('main') }}
                         {% if is_granted('ROLE_USER') %}
                             <div class="pull-right">
-                                <a class="btn navbar-btn btn-primary" href="{{ url('facemanga_main_anime_create') }}">
+                                <a class="btn navbar-btn btn-primary" id="create_anime_button" href="{{ url('facemanga_main_anime_create') }}" data-toggle="tooltip" data-placement="bottom" title="{{ 'dashboard.create_anime'|trans }}">
                                     {{ icon('plus') }}
                                 </a>
                                 <a class="btn navbar-btn btn-default" href="{{ path('fos_user_security_logout') }}">
@@ -52,6 +52,7 @@
             {% javascripts 
                 '@jquery_js'
                 '@MopaBootstrapBundle/Resources/public/bootstrap/dist/js/bootstrap.js'
+                '@FaceMangaMainBundle/Resources/public/script.js'
             %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
