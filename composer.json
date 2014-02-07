@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "ntimo/animevideo",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Private Project! Not Intended For Public Reuse!",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -24,7 +24,8 @@
         "leafo/lessphp": "dev-master",
         "jquery/jquery": "~2.0.0",
         "knplabs/knp-menu-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "~2.0",
+        "knplabs/knp-menu": "2.0.*@dev", 
+        "friendsofsymfony/user-bundle": "2.0.x-dev",
         "jasny/twig-extensions": "dev-master",
         "ajgl/composer-symlinker": "dev-master"
     },
@@ -77,5 +78,5 @@
             }
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
