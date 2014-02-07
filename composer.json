@@ -22,7 +22,7 @@
         "mopa/bootstrap-bundle": "dev-master",
         "twbs/bootstrap": "~3.1.0",
         "leafo/lessphp": "dev-master",
-        "jquery/jquery": "~2.0.0",
+        "jquery/jquery": "~2.0",
         "knplabs/knp-menu-bundle": "dev-master",
         "knplabs/knp-menu": "2.0.*@dev", 
         "friendsofsymfony/user-bundle": "2.0.x-dev",
@@ -34,9 +34,9 @@
             "type": "package",
             "package": {
                 "name": "jquery/jquery",
-                "version": "2.0.3",
+                "version": "2.1.0",
                 "dist": {
-                    "url": "http://code.jquery.com/jquery-2.0.3.js",
+                    "url": "http://code.jquery.com/jquery-2.1.0.js",
                     "type": "file"
                 }
             }
@@ -74,7 +74,8 @@
         },
         "ajgl-symlinks": {
             "": {
-                "twbs/bootstrap/dist/fonts/": "../web/fonts/"
+                "twbs/bootstrap/dist/fonts/": "../web/fonts/",
+                "jquery/jquery": "../src/FaceManga/MainBundle/Resources/vendor/jquery/"
             }
         }
     },

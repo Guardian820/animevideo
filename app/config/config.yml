@@ -38,10 +38,6 @@ assetic:
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
-    assets:
-        jquery_js:
-            inputs:
-                - '%kernel.root_dir%/../vendor/jquery/jquery/jquery-2.0.3.js'
 
 # Doctrine Configuration
 doctrine:
