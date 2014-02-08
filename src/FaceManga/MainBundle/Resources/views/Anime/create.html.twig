@@ -1,5 +1,6 @@
 {% extends '::base.html.twig' %}
+{% form_theme form 'MopaBootstrapBundle:Form:fields.html.twig' %}
 
 {% block content %}
-    
+    {{ form(form) }}
 {% endblock %}

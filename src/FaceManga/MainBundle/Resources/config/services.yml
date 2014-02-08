@@ -13,6 +13,11 @@ services:
         tags:
             - { name: knp_menu.menu, alias: main }
 
+    facemanga.main.form.type.anime:
+        class: FaceManga\MainBundle\Form\Type\AnimeType
+        tags:
+            - { name: form.type, alias: anime }
+    
     twig.extension.pcre:
         class: Jasny\Twig\PcreExtension
         tags:

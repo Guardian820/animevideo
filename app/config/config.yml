@@ -67,6 +67,11 @@ swiftmailer:
 
 mopa_bootstrap:
     menu: ~
+    form:
+        templating: true
+        render_fieldset: true
+        show_legend: true
+        
     
 fos_user:
     db_driver: orm
