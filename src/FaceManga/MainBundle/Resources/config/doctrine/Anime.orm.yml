@@ -1,5 +1,6 @@
 FaceManga\MainBundle\Entity\Anime:
     type: entity
+    repositoryClass: FaceManga\MainBundle\Entity\AnimeRepository
     table: null
     id:
         id:
