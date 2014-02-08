@@ -15,7 +15,10 @@ class AnimeType extends AbstractType
             ->add('description', 'textarea')
             ->add('year', 'number')
             ->add('episodes', 'number')
-            ->add('save', 'submit');
+            ->add('save', 'submit', array(
+                'attr' => array('class' => 'btn-primary'),
+                'label' => 'create_anime.save'
+            ));
     }
     
     public function getName()

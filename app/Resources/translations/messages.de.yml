@@ -10,3 +10,4 @@ dashboard:
     
 create_anime:
     legend: Anime erstellen
+    save: Speichern
