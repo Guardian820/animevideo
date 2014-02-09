@@ -28,7 +28,8 @@
         "friendsofsymfony/user-bundle": "2.0.x-dev",
         "jasny/twig-extensions": "dev-master",
         "ajgl/composer-symlinker": "dev-master",
-        "istvan-ujjmeszaros/bootstrap-touchspin": "~2.6"
+        "istvan-ujjmeszaros/bootstrap-touchspin": "~2.6",
+        "tim-schlechter/bootstrap-tagsinput": "~0.3.9"
     },
     "repositories": [
         {
@@ -49,6 +50,17 @@
                 "version": "2.6.2",
                 "dist": {
                     "url": "https://github.com/istvan-ujjmeszaros/bootstrap-touchspin/archive/2.6.2.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "tim-schlechter/bootstrap-tagsinput",
+                "version": "0.3.9",
+                "dist": {
+                    "url": "https://github.com/TimSchlechter/bootstrap-tagsinput/archive/0.3.9.zip",
                     "type": "zip"
                 }
             }
@@ -88,7 +100,8 @@
             "": {
                 "twbs/bootstrap/dist/fonts/": "../web/fonts/",
                 "jquery/jquery": "../src/FaceManga/MainBundle/Resources/vendor/jquery/",
-                "istvan-ujjmeszaros/bootstrap-touchspin/bootstrap-touchspin": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-touchspin/"
+                "istvan-ujjmeszaros/bootstrap-touchspin/bootstrap-touchspin": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-touchspin/",
+                "tim-schlechter/bootstrap-tagsinput/dist/": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-tagsinput/"
             }
         }
     },

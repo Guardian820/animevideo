@@ -2,6 +2,7 @@
 {% form_theme form 'MopaBootstrapBundle:Form:fields.html.twig' %}
 
 {% block content %}
+    {{ macro.alert('create_anime.info'|trans, 'warning') }}
     {{ form_start(form) }}
         {{ form_errors(form) }}
 
@@ -10,6 +11,7 @@
                 {{ form_row(form.name) }}
                 {{ form_row(form.year) }}
                 {{ form_row(form.episodes) }}
+                {{ form_row(form.genre) }}
             </div>
             <div class="col-md-6">
                 {{ form_label(form.description) }}

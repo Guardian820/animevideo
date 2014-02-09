@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e6070a7c309c96f016692ea7c2fe5987",
+    "hash": "443a8903d41b368dcae630b0a57708e0",
     "packages": [
         {
             "name": "ajgl/composer-symlinker",
@@ -1902,6 +1902,17 @@
                 "framework"
             ],
             "time": "2014-01-05 02:12:11"
+        },
+        {
+            "name": "tim-schlechter/bootstrap-tagsinput",
+            "version": "0.3.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/TimSchlechter/bootstrap-tagsinput/archive/0.3.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
         },
         {
             "name": "twbs/bootstrap",

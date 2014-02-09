@@ -2,6 +2,7 @@
 
 namespace FaceManga\MainBundle\Form\Type;
 
+use FaceManga\MainBundle\Form\DataTransformer\ArrayToStringTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Translation\TranslatorInterface;
@@ -18,6 +19,7 @@ class AnimeType extends AbstractType
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $genreTransformer = new ArrayToStringTransformer();
         $builder
             ->add('name', null, array(
                 'attr' => array('placeholder' => $this->trans->trans('create_anime.placeholder.name'))
@@ -41,6 +43,9 @@ class AnimeType extends AbstractType
                     'placeholder' => 0
                 )
             ))
+            ->add($builder->create('genre', 'text', array(
+                'attr' => array('data-role' => 'tagsinput')
+            ))->addModelTransformer($genreTransformer))
             ->add('save', 'submit', array(
                 'attr' => array('class' => 'btn-primary'),
                 'label' => 'create_anime.placeholder.save'

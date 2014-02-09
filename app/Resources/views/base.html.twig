@@ -1,3 +1,11 @@
+{% macro alert(text, type) %}
+    <div class="alert alert-dismissable alert-{{ type|default('info') }}">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{ text|raw }}
+    </div>
+{% endmacro %}
+{% import _self as macro %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -45,7 +53,7 @@
                 {% endembed %}
             {% endblock %}
             <div class="container" style="padding-top:40px">
-                {% block content %}{% endblock %}
+                    {% block content %}{% endblock %}
             </div>
         {% endblock %}
         {% block javascripts %}
@@ -53,6 +61,7 @@
                 '@FaceMangaMainBundle/Resources/vendor/jquery/jquery-2.1.0.js'
                 '@MopaBootstrapBundle/Resources/public/bootstrap/dist/js/bootstrap.js'
                 '@FaceMangaMainBundle/Resources/vendor/bootstrap-touchspin/bootstrap.touchspin.js'
+                '@FaceMangaMainBundle/Resources/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js'
                 '@FaceMangaMainBundle/Resources/public/script.js'
             %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>

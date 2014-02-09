@@ -10,6 +10,7 @@ dashboard:
     
 create_anime:
     legend: Anime erstellen
+    info: Bitte pr&uuml;fe, ob der Anime, den du erstellen m&ouml;chtest, bereits existiert.
     placeholder:
         name: Der Titel der Anime-Serie
         description: Eine kurze Beschreibung der Handlung
