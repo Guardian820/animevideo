@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2ea431b74e7181af8550a39600f17593",
+    "hash": "e6070a7c309c96f016692ea7c2fe5987",
     "packages": [
         {
             "name": "ajgl/composer-symlinker",
@@ -594,16 +594,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "84373d05a4198ec380918d535abf83c454c3867f"
+                "reference": "0363a5548d9263f979f9ca149decb9cfc66419ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/84373d05a4198ec380918d535abf83c454c3867f",
-                "reference": "84373d05a4198ec380918d535abf83c454c3867f",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/0363a5548d9263f979f9ca149decb9cfc66419ab",
+                "reference": "0363a5548d9263f979f9ca149decb9cfc66419ab",
                 "shasum": ""
             },
             "require": {
@@ -666,7 +666,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2013-11-12 12:40:13"
+            "time": "2014-02-08 16:35:09"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -790,17 +790,28 @@
             "time": "2013-12-07 10:10:39"
         },
         {
+            "name": "istvan-ujjmeszaros/bootstrap-touchspin",
+            "version": "2.6.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/istvan-ujjmeszaros/bootstrap-touchspin/archive/2.6.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
+        },
+        {
             "name": "jasny/twig-extensions",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasny/twig-extensions.git",
-                "reference": "b74c5bc8dfd6a6f4f96b2f4feb53f1fc83b76030"
+                "reference": "9ed046b433e9448a81db83fc437fe802a4cb3de4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasny/twig-extensions/zipball/b74c5bc8dfd6a6f4f96b2f4feb53f1fc83b76030",
-                "reference": "b74c5bc8dfd6a6f4f96b2f4feb53f1fc83b76030",
+                "url": "https://api.github.com/repos/jasny/twig-extensions/zipball/9ed046b433e9448a81db83fc437fe802a4cb3de4",
+                "reference": "9ed046b433e9448a81db83fc437fe802a4cb3de4",
                 "shasum": ""
             },
             "require": {
@@ -841,7 +852,7 @@
                 "text",
                 "time"
             ],
-            "time": "2013-10-25 15:30:15"
+            "time": "2014-02-07 17:56:30"
         },
         {
             "name": "jdorn/sql-formatter",

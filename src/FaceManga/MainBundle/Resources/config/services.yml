@@ -15,6 +15,7 @@ services:
 
     facemanga.main.form.type.anime:
         class: FaceManga\MainBundle\Form\Type\AnimeType
+        arguments: ["@translator"]
         tags:
             - { name: form.type, alias: anime }
     

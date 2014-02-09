@@ -27,7 +27,8 @@
         "knplabs/knp-menu": "2.0.*@dev", 
         "friendsofsymfony/user-bundle": "2.0.x-dev",
         "jasny/twig-extensions": "dev-master",
-        "ajgl/composer-symlinker": "dev-master"
+        "ajgl/composer-symlinker": "dev-master",
+        "istvan-ujjmeszaros/bootstrap-touchspin": "~2.6"
     },
     "repositories": [
         {
@@ -38,6 +39,17 @@
                 "dist": {
                     "url": "http://code.jquery.com/jquery-2.1.0.js",
                     "type": "file"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "istvan-ujjmeszaros/bootstrap-touchspin",
+                "version": "2.6.2",
+                "dist": {
+                    "url": "https://github.com/istvan-ujjmeszaros/bootstrap-touchspin/archive/2.6.2.zip",
+                    "type": "zip"
                 }
             }
         }
@@ -75,7 +87,8 @@
         "ajgl-symlinks": {
             "": {
                 "twbs/bootstrap/dist/fonts/": "../web/fonts/",
-                "jquery/jquery": "../src/FaceManga/MainBundle/Resources/vendor/jquery/"
+                "jquery/jquery": "../src/FaceManga/MainBundle/Resources/vendor/jquery/",
+                "istvan-ujjmeszaros/bootstrap-touchspin/bootstrap-touchspin": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-touchspin/"
             }
         }
     },

@@ -2,5 +2,20 @@
 {% form_theme form 'MopaBootstrapBundle:Form:fields.html.twig' %}
 
 {% block content %}
-    {{ form(form) }}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_row(form.name) }}
+                {{ form_row(form.year) }}
+                {{ form_row(form.episodes) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_label(form.description) }}
+                {{ form_widget(form.description) }}
+                {{ form_errors(form.description) }}
+            </div>
+        </div>
+    {{ form_end(form) }}
 {% endblock %}
