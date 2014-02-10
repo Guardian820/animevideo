@@ -17,9 +17,11 @@ class AnimeRepository extends EntityRepository
     
     public function findRandom($count = 4)
     {
+        $countRows = $this->count();
         $animes = array();
-        for ($i = 1; $i <= $this->count(); $i++) {
-            $id = rand(1, $this->count());
+        
+        for ($i = 1; $i <= $count; $i++) {
+            $id = rand(1, $countRows);
             
             $animes[] = $this->createQueryBuilder('a')
                     ->where('a.id = :id')
