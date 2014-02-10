@@ -8,9 +8,6 @@ FaceManga\MainBundle\Entity\Anime:
                 maxMessage: Das Jahr ist ungültig.
                 invalidMessage: Das Jahr muss eine Zahl sein.
         episodes:
-            - Type:
-                type: integer
-                message: Muss eine Zahl sein.
             - GreaterThanOrEqual:
                 value: 0
                 message: Muss groesser oder gleich 0 sein.

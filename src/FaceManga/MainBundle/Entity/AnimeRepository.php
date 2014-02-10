@@ -15,4 +15,20 @@ class AnimeRepository extends EntityRepository
         return $qb->getQuery()->getSingleScalarResult();
     }
     
+    public function findRandom($count = 4)
+    {
+        $animes = array();
+        for ($i = 1; $i <= $this->count(); $i++) {
+            $id = rand(1, $this->count());
+            
+            $animes[] = $this->createQueryBuilder('a')
+                    ->where('a.id = :id')
+                    ->setParameter('id', $id)
+                    ->getQuery()
+                    ->getSingleResult();
+        }
+        
+        return $animes;
+    }
+    
 }
