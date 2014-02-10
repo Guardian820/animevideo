@@ -9,6 +9,10 @@ web/uploads/*
 web/bundles/*
 web/fonts/*
 
+# Vendor assets
+src/FaceManga/MainBundle/Resources/vendor/*
+!src/FaceManga/MainBundle/Resources/vendor/.gitkeep
+
 # Configuration files
 app/config/parameters.ini
 app/config/parameters.yml
