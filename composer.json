@@ -29,7 +29,8 @@
         "jasny/twig-extensions": "dev-master",
         "ajgl/composer-symlinker": "dev-master",
         "istvan-ujjmeszaros/bootstrap-touchspin": "~2.6",
-        "tim-schlechter/bootstrap-tagsinput": "~0.3.9"
+        "tim-schlechter/bootstrap-tagsinput": "~0.3.9",
+        "msurguy/ladda-bootstrap": "~0.1.0"
     },
     "repositories": [
         {
@@ -61,6 +62,17 @@
                 "version": "0.3.9",
                 "dist": {
                     "url": "https://github.com/TimSchlechter/bootstrap-tagsinput/archive/0.3.9.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "msurguy/ladda-bootstrap",
+                "version": "0.1.0",
+                "dist": {
+                    "url": "https://github.com/msurguy/ladda-bootstrap/archive/v0.1.0.zip",
                     "type": "zip"
                 }
             }
@@ -101,7 +113,8 @@
                 "twbs/bootstrap/dist/fonts/": "../web/fonts/",
                 "jquery/jquery": "../src/FaceManga/MainBundle/Resources/vendor/jquery/",
                 "istvan-ujjmeszaros/bootstrap-touchspin/bootstrap-touchspin": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-touchspin/",
-                "tim-schlechter/bootstrap-tagsinput/dist/": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-tagsinput/"
+                "tim-schlechter/bootstrap-tagsinput/dist/": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-tagsinput/",
+                "msurguy/ladda-bootstrap/dist/": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-ladda/"
             }
         }
     },

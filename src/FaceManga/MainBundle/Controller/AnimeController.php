@@ -5,6 +5,7 @@ namespace FaceManga\MainBundle\Controller;
 use FaceManga\MainBundle\Entity\Anime;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AnimeController extends Controller
 {
@@ -29,6 +30,20 @@ class AnimeController extends Controller
         
         return $this->render('FaceMangaMainBundle:Anime:create.html.twig', array(
             'form' => $form->createView()
+        ));
+    }
+    
+    public function showAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('FaceMangaMainBundle:Anime');
+        
+        $anime = $repo->findOneById($id);
+        if (!$anime) {
+            throw new NotFoundHttpException('Der angeforderte Anime wurde nicht gefunden!');
+        }
+            
+        return $this->render('FaceMangaMainBundle:Anime:show.html.twig', array(
+            'anime' => $anime
         ));
     }
     

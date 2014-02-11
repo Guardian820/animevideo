@@ -16,3 +16,10 @@ create_anime:
         name: Der Titel der Anime-Serie
         description: Eine kurze Beschreibung der Handlung
         save: Speichern
+
+show_anime:
+    name: Name
+    year: Erscheinungsjahr
+    episodes: Episoden
+    genre: Genre
+    description: Handlung

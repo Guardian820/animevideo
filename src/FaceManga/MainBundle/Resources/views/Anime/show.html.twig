@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <legend>{{ anime.name }}</legend>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="{{ asset('img/dummy.png') }}" /><br />
+        </div>
+        <div class="col-md-9">
+            {% set fields = ['name', 'genre', 'episodes', 'description'] %}
+                {% for field in fields %}
+                    <div class="row">
+                        <div class="col-md-3 h4" style="text-align:right">
+                            {% set tmp_translate = 'show_anime.' ~ field %}
+                            {{ tmp_translate|trans }}
+                        </div>
+                        <div class="col-md-9">
+                            {# TODO: Reduce attribute() calls #}
+                            {% if attribute(anime, field) is iterable %}{# for 'genre' #}
+                                {% for label in attribute(anime, field) %}
+                                    <span class="tag label label-info">{{ label }}</span>
+                                {% endfor %}
+                            {% else %}
+                                {{ attribute(anime, field) }}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}
