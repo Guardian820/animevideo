@@ -42,6 +42,9 @@ class AnimeController extends Controller
             throw new NotFoundHttpException('Der angeforderte Anime wurde nicht gefunden!');
         }
             
+        $anime->increaseViewCount();
+        $this->getDoctrine()->getManager()->flush();
+        
         return $this->render('FaceMangaMainBundle:Anime:show.html.twig', array(
             'anime' => $anime
         ));

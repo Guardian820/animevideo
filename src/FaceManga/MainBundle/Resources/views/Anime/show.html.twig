@@ -7,7 +7,9 @@
             <img src="{{ asset('img/dummy.png') }}" /><br />
         </div>
         <div class="col-md-9">
-            {% set fields = ['name', 'genre', 'episodes', 'description'] %}
+            {# We have to make an exception: Due to the camelcasing of 'viewCount' and the
+            logic below, our l18n key has to be camelcased, too #}
+            {% set fields = ['name', 'genre', 'viewCount', 'episodes', 'description'] %}
                 {% for field in fields %}
                     <div class="row">
                         <div class="col-md-3 h4" style="text-align:right">
