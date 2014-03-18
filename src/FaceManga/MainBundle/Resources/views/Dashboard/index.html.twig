@@ -8,10 +8,12 @@
     <b class="h4">{{ 'dashboard.popular_animes'|trans|raw }}</b>
     <div class="row">
         {% for anime in popular_animes %}
-            <div class="col-md-3">
-                <img src="/img/dummy.png" /><br />
-                {{ anime.name }}
-            </div>
+            <a href="{{ url('facemanga_main_anime_show', {'id': anime.id}) }}">
+                <div class="col-md-3">
+                    <img src="/img/dummy.png" /><br />
+                    {{ anime.name }}
+                </div>
+            </a>
         {% endfor %}
     </div>
 {% endblock %}

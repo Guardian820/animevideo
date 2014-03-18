@@ -6,6 +6,9 @@ use FaceManga\MainBundle\Entity\Anime;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
+use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony\Component\Security\Acl\Permission\MaskBuilder;
 
 class AnimeController extends Controller
 {
@@ -25,6 +28,20 @@ class AnimeController extends Controller
             $em->persist($anime);
             $em->flush();
             
+            // create the ACL
+            $aclProvider = $this->get('security.acl.provider');
+            $objectIdentity = ObjectIdentity::fromDomainObject($anime);
+            $acl = $aclProvider->createAcl($objectIdentity);
+            
+            // retrieving the security identity of the currently logged-in user
+            $securityContext = $this->get('security.context');
+            $user = $securityContext->getToken()->getUser();
+            $securityIdentity = UserSecurityIdentity::fromAccount($user);
+            
+            // grant owner access
+            $acl->insertObjectAce($securityIdentity, MaskBuilder::MASK_OWNER);
+            $aclProvider->updateAcl($acl);
+            
             return $this->redirect($this->generateUrl('facemanga_main_dashboard'));
         }
         
@@ -41,7 +58,7 @@ class AnimeController extends Controller
         if (!$anime) {
             throw new NotFoundHttpException('Der angeforderte Anime wurde nicht gefunden!');
         }
-            
+        
         $anime->increaseViewCount();
         $this->getDoctrine()->getManager()->flush();
         

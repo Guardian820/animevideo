@@ -167,7 +167,7 @@ class Anime
     /**
      * @var integer
      */
-    private $view_count;
+    private $view_count = 0;
 
 
     /**
