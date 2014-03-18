@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <a class="btn btn-success" href="{{ url('facemanga_main_dashboard') }}">{{ icon('chevron-left') }}  Back</a>
+            {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+        </div>
+    </div>
+{% endblock %}

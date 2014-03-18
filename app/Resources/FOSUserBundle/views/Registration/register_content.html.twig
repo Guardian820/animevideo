@@ -1,0 +1,9 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% form_theme form 'MopaBootstrapBundle:Form:fields.html.twig' %}
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" class="btn btn-primary pull-right" value="{{ 'registration.submit'|trans }}" style="margin-top: 10px;" />
+    </div>
+</form>
