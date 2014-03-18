@@ -3,7 +3,12 @@
 {% block title %}{{ anime.name }}{% endblock %}
 
 {% block content %}
-    <legend>{{ anime.name }}</legend>
+    <legend>
+        {{ anime.name }}
+        {% if is_granted('DELETE', anime) %}
+            <button class="pull-right btn btn-danger" data-toggle="modal" data-target="#delete">{{ icon('trash') }}</button>
+        {% endif %}
+    </legend>
     <div class="row">
         <div class="col-md-3">
             <img src="{{ asset('img/dummy.png') }}" /><br />
@@ -30,6 +35,21 @@
                         </div>
                     </div>
                 {% endfor %}
+        </div>
+    </div>
+    <div class="modal fade" id="delete">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">{{ 'delete_anime.title'|trans }}</h4>
+                </div>
+                <div class="modal-body">{{ 'delete_anime.body'|trans }}</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'delete_anime.close'|trans }}</button>
+                    <a type="button" class="btn btn-primary" href="{{ url('facemanga_main_anime_delete', {'id': anime.id}) }}">{{ 'delete_anime.delete'|trans }}</a>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -6,6 +6,7 @@ use FaceManga\MainBundle\Entity\Anime;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
 use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
 use Symfony\Component\Security\Acl\Permission\MaskBuilder;
@@ -65,6 +66,24 @@ class AnimeController extends Controller
         return $this->render('FaceMangaMainBundle:Anime:show.html.twig', array(
             'anime' => $anime
         ));
+    }
+    
+    public function deleteAction($id)
+    {   
+        $repo = $this->getDoctrine()->getRepository('FaceMangaMainBundle:Anime');
+        
+        $anime = $repo->findOneById($id);
+        if (!$anime)
+            throw new NotFoundHttpException('Der zu löschende Anime wurde nicht gefunden!');
+        
+        if ($this->get('security.context')->isGranted('DELETE', $anime) === false)
+            throw new AccessDeniedException();
+        
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($anime);
+        $em->flush();
+        
+        return $this->redirect($this->generateUrl('facemanga_main_dashboard'));
     }
     
 }

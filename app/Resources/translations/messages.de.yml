@@ -24,3 +24,9 @@ show_anime:
     genre: Genre
     description: Handlung
     viewCount: Aufrufe
+    
+delete_anime:
+    title: Wirklich löschen?
+    body: Sobald sie den Vorgang bestätigt haben, wird dieser Anime permanent und unwiederruflich gelöscht. Das heisst, dass sie ihn nie wieder aufrufen können.
+    close: Doch nicht
+    delete: Bestätigen
