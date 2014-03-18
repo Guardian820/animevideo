@@ -7,7 +7,7 @@ dashboard:
     title: Dashboard
     anime_counter: '{0}Zur Zeit sind keine Animes gelistet.|{1} Es ist ein Anime gelistet!|]1, Inf]%count% Animes gelistet!'
     create_anime: Anime erstellen
-    random_animes: Zuf&auml;llig
+    popular_animes: Beliebte Animes
     
 create_anime:
     legend: Anime erstellen

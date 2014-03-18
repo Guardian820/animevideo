@@ -12,7 +12,7 @@ class DashboardController extends Controller
         
         return $this->render('FaceMangaMainBundle:Dashboard:index.html.twig', array(
             'anime_count' => $repo->count(),
-            'random_animes' => $repo->findRandom()
+            'popular_animes' => $repo->findPopular(4)
         ));
         
     }
