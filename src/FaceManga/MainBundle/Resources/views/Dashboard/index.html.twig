@@ -6,9 +6,15 @@
     {% if anime_count < 1 %}
         <div class="alert alert-warning">
             {{ 'dashboard.anime_counter'|transchoice(anime_count) }}
-            <a class="alert-link" href="{{ url('facemanga_main_anime_create') }}">
-                {{ 'dashboard.create_first_anime'|trans }}
-            </a>
+            {% if is_granted('ROLE_USER') %}
+                <a class="alert-link" href="{{ url('facemanga_main_anime_create') }}">
+                        {{ 'dashboard.create_first_anime'|trans }}
+                </a>
+            {% else %}
+                <a class="alert-link" href="{{ url('fos_user_security_login') }}">
+                    {{ 'dashboard.login_create_first_anime'|trans }}
+                </a>
+            {% endif %}
         </div>
     {% else %}
         {{ macro.alert('dashboard.anime_counter'|transchoice(anime_count), 'info') }}
