@@ -3,17 +3,26 @@
 {% block title %}{{ 'dashboard.title'|trans }}{% endblock %}
 
 {% block content %}
-    {{ macro.alert('dashboard.anime_counter'|transchoice(anime_count), 'info') }}
-
-    <b class="h4">{{ 'dashboard.popular_animes'|trans|raw }}</b>
-    <div class="row">
-        {% for anime in popular_animes %}
-            <a href="{{ url('facemanga_main_anime_show', {'id': anime.id}) }}">
-                <div class="col-md-3">
-                    <img src="/img/dummy.png" /><br />
-                    {{ anime.name }}
-                </div>
+    {% if anime_count < 1 %}
+        <div class="alert alert-warning">
+            {{ 'dashboard.anime_counter'|transchoice(anime_count) }}
+            <a class="alert-link" href="{{ url('facemanga_main_anime_create') }}">
+                {{ 'dashboard.create_first_anime'|trans }}
             </a>
-        {% endfor %}
-    </div>
+        </div>
+    {% else %}
+        {{ macro.alert('dashboard.anime_counter'|transchoice(anime_count), 'info') }}
+
+        <b class="h4">{{ 'dashboard.popular_animes'|trans|raw }}</b>
+        <div class="row">
+            {% for anime in popular_animes %}
+                <a href="{{ url('facemanga_main_anime_show', {'id': anime.id}) }}">
+                    <div class="col-md-3">
+                        <img src="/img/dummy.png" /><br />
+                        {{ anime.name }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}
