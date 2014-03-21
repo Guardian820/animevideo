@@ -30,7 +30,8 @@
         "ajgl/composer-symlinker": "dev-master",
         "istvan-ujjmeszaros/bootstrap-touchspin": "~2.6",
         "tim-schlechter/bootstrap-tagsinput": "~0.3.9",
-        "msurguy/ladda-bootstrap": "~0.1.0"
+        "msurguy/ladda-bootstrap": "~0.1.0",
+        "vitalets/x-editable": "~1.5.0"
     },
     "repositories": [
         {
@@ -76,6 +77,17 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "vitalets/x-editable",
+                "version": "1.5.1",
+                "dist": {
+                    "url": "https://github.com/vitalets/x-editable/archive/1.5.1.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "scripts": {
@@ -114,7 +126,10 @@
                 "jquery/jquery": "../src/FaceManga/MainBundle/Resources/vendor/jquery/",
                 "istvan-ujjmeszaros/bootstrap-touchspin/bootstrap-touchspin": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-touchspin/",
                 "tim-schlechter/bootstrap-tagsinput/dist/": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-tagsinput/",
-                "msurguy/ladda-bootstrap/dist/": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-ladda/"
+                "msurguy/ladda-bootstrap/dist/": "../src/FaceManga/MainBundle/Resources/vendor/bootstrap-ladda/",
+                "vitalets/x-editable/dist/bootstrap3-editable/": "../src/FaceManga/MainBundle/Resources/vendor/x-editable/",
+                "vitalets/x-editable/dist/bootstrap3-editable/img/clear.png": "../web/img/clear.png",
+                "vitalets/x-editable/dist/bootstrap3-editable/img/loading.gif": "../web/img/loading.gif"
             }
         }
     },

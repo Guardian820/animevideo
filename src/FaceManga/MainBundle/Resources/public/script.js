@@ -8,4 +8,8 @@ $(document).ready(function() {
             step: 1
         });
     });
+    
+    $('.x-editable').each(function() {
+        $(this).editable();
+    });
 });
