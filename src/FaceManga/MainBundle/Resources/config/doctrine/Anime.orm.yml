@@ -22,4 +22,10 @@ FaceManga\MainBundle\Entity\Anime:
             type: text
         view_count:
             type: integer
+    oneToOne:
+        last_editor:
+            targetEntity: User
+            joinColumn:
+                name: last_editor_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

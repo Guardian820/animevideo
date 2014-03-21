@@ -25,6 +25,9 @@ class AnimeController extends Controller
         $form->handleRequest($request);
         
         if ($form->isValid()) {
+            $user = $this->get('security.context')->getToken()->getUser();
+            $anime->setLastEditor($user);
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($anime);
             $em->flush();

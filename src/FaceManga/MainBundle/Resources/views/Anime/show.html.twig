@@ -3,12 +3,21 @@
 {% block title %}{{ anime.name }}{% endblock %}
 
 {% block content %}
-    <legend>
-        {{ anime.name }}
-        {% if is_granted('DELETE', anime) %}
-            <button class="pull-right btn btn-danger" data-toggle="modal" data-target="#delete">{{ icon('trash') }}</button>
-        {% endif %}
-    </legend>
+    <div class="row">
+        <div class="col-md-10">
+            <legend>
+                {{ anime.name }}
+                {% if anime.lastEditor is not null %} {# should actually be true everytime #}
+                    <h5><i>{{ 'show_anime.last_edited'|trans({'%name%': anime.lastEditor.username}) }}</i></h5>
+                {% endif %}
+            </legend>
+        </div>
+        <div class="col-md-2">
+            {% if is_granted('DELETE', anime) %}
+                <button class="pull-right btn btn-danger" data-toggle="modal" data-target="#delete">{{ icon('trash') }}</button>
+            {% endif %}
+        </div>
+    </row>
     <div class="row">
         <div class="col-md-3">
             <img src="{{ asset('img/dummy.png') }}" /><br />
