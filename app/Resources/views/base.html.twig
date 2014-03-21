@@ -31,13 +31,36 @@
                     {% block menu %}
                         {{ mopa_bootstrap_menu('main') }}
                         {% if is_granted('ROLE_USER') %}
+                            {#<a id="create_anime_button" href="{{ url('facemanga_main_anime_create') }}" data-toggle="tooltip" data-placement="bottom" title="{{ 'dashboard.create_anime'|trans }}">
+                                {{ icon('plus') }}
+                            </a>
+                            {{ 'navbar.logged_in_as'|trans }}
+                            <a class="btn navbar-btn btn-default" data-toggle="dropdown">
+                            <a class="btn navbar-btn btn-default" href="{{ path('fos_user_security_logout') }}">
+                                {{ 'logout'|trans }}
+                            </a>
+                            </a>#}
                             <div class="pull-right">
-                                <a id="create_anime_button" href="{{ url('facemanga_main_anime_create') }}" data-toggle="tooltip" data-placement="bottom" title="{{ 'dashboard.create_anime'|trans }}">
-                                    {{ icon('plus') }}
-                                </a>
-                                <a class="btn navbar-btn btn-default" href="{{ path('fos_user_security_logout') }}">
-                                    {{ 'logout'|trans }}
-                                </a>
+                                <p class="navbar-text">{{ 'navbar.logged_in_as'|trans }}</p>
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                            {{ app.user.username }}
+                                        </a>
+                                        <ul class="dropdown-menu pull-right" role="menu"> {# TODO: integrate with KnpMenuBundle #}
+                                            <li>
+                                                <a href="{{ url('facemanga_main_anime_create') }}">
+                                                    {{ icon('plus')|raw }} {{ 'create_anime.legend'|trans }}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('fos_user_security_logout') }}">
+                                                    {{ icon('log-out')|raw }} {{ 'logout'|trans }}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
                             </div>
                         {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
                             <div class="pull-right">
