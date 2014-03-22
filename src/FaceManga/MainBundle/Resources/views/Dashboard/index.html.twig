@@ -29,6 +29,14 @@
                     </div>
                 </a>
             {% endfor %}
+            {% if popular_animes|length < 4 %}
+                {% set columns_left = 4 - popular_animes|length %}
+                {% for i in 1..columns_left %}
+                    <div class="col-md-3 visible-md visible-lg">
+                        <i>{{ 'dashboard.not_available'|trans }}</i>
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
     {% endif %}
 {% endblock %}

@@ -13,6 +13,7 @@ dashboard:
     create_first_anime: Erstelle den Ersten!
     create_anime: Anime erstellen
     popular_animes: Beliebte Animes
+    not_available: Nicht verfügbar
     
 create_anime:
     legend: Anime erstellen
