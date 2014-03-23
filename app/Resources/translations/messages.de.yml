@@ -30,7 +30,6 @@ show_anime:
     genre: Genre
     description: Handlung
     viewCount: Aufrufe
-    last_edited: zuletzt bearbeitet von %name%
     
 delete_anime:
     title: Wirklich löschen?

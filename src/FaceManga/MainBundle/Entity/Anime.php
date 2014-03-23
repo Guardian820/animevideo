@@ -38,16 +38,6 @@ class Anime
      * @var string
      */
     private $description;
-    
-    /**
-     * @var integer
-     */
-    private $view_count = 0;
-    
-    /*
-     * @var \FaceManga\MainBundle\Entity\User
-     */
-    private $last_editor;
 
 
     /**
@@ -174,6 +164,11 @@ class Anime
     {
         return $this->description;
     }
+    /**
+     * @var integer
+     */
+    private $view_count = 0;
+
 
     /**
      * Set view_counter
@@ -197,17 +192,4 @@ class Anime
     {
         return $this->view_count;
     }
-    
-    public function setLastEditor(User $user)
-    {
-        $this->last_editor = $user;
-        
-        return $this;
-    }
-    
-    public function getLastEditor()
-    {
-        return $this->last_editor;
-    }
-    
 }

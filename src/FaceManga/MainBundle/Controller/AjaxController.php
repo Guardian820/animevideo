@@ -23,11 +23,7 @@ class AjaxController extends Controller
             $this->returnNotFound();
         }
         
-        $this->setProperty($anime, $column, $value);
-        
-        $user = $this->get('security.context')->getToken()->getUser();
-        $anime->setLastEditor($user);
-        
+        $anime = $this->setProperty($anime, $column, $value);
         $this->save($anime);
         
         return new JsonResponse();
