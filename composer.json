@@ -31,7 +31,9 @@
         "istvan-ujjmeszaros/bootstrap-touchspin": "~2.6",
         "tim-schlechter/bootstrap-tagsinput": "~0.3.9",
         "msurguy/ladda-bootstrap": "~0.1.0",
-        "vitalets/x-editable": "~1.5.0"
+        "vitalets/x-editable": "~1.5.0",
+        "doctrine/migrations": "dev-master",
+        "doctrine/doctrine-migrations-bundle": "dev-master"
     },
     "repositories": [
         {
@@ -98,7 +100,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
             "Ajgl\\Composer\\ScriptSymlinker::createSymlinks",
-            "FaceManga\\MainBundle\\Composer\\ScriptHandler::updateSchema",
+            "FaceManga\\MainBundle\\Composer\\ScriptHandler::migrate",
             "FaceManga\\MainBundle\\Composer\\ScriptHandler::initAcl"
         ],
         "post-update-cmd": [
@@ -108,7 +110,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
             "Ajgl\\Composer\\ScriptSymlinker::createSymlinks",
-            "FaceManga\\MainBundle\\Composer\\ScriptHandler::updateSchema"
+            "FaceManga\\MainBundle\\Composer\\ScriptHandler::migrate"
         ]
     },
     "config": {

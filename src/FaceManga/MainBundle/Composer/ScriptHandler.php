@@ -8,7 +8,7 @@ use Sensio\Bundle\DistributionBundle\Composer\ScriptHandler as SensioHandler;
 class ScriptHandler extends SensioHandler
 {
     
-    public static function updateSchema(CommandEvent $event)
+    public static function migrate(CommandEvent $event)
     {
         $options = self::getOptions($event);
         $appDir = $options['symfony-app-dir'];
@@ -18,7 +18,7 @@ class ScriptHandler extends SensioHandler
             return;
         }
 
-        static::executeCommand($event, $appDir, 'doctrine:schema:update --force', $options['process-timeout']);
+        static::executeCommand($event, $appDir, 'doctrine:migrations:migrate --no-interaction', $options['process-timeout']);
     }
     
     public static function initAcl(CommandEvent $event)
