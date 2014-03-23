@@ -1,7 +1,7 @@
 Installation
 ==========
 
-Firstly, you need to have [composer][1] installed, therfor go to [it's download page], or download the [.exe installer][3] if you're using windows. Afterwards, make sure you have [git][4] installed on your machine, so composer is able to fetch the latest vendor dependencies.
+Firstly, you need to have [composer][1] installed, therfor go to [it's download page][2], or download the [.exe installer][3] if you're using windows. Afterwards, make sure you have [git][4] installed on your machine, so composer is able to fetch the latest vendor dependencies.
 
 Then go ahead to your command line (with **administrative privileges**, see below) and execute the following command:
 ```
