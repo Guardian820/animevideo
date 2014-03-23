@@ -12,4 +12,8 @@ $(document).ready(function() {
     $('.x-editable').each(function() {
         $(this).editable();
     });
+    
+    $('[data-toggle="tooltip"]').each(function() {
+        $(this).tooltip();
+    });
 });
