@@ -192,4 +192,62 @@ class Anime
     {
         return $this->view_count;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $likes;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->likes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set view_count
+     *
+     * @param integer $viewCount
+     * @return Anime
+     */
+    public function setViewCount($viewCount)
+    {
+        $this->view_count = $viewCount;
+
+        return $this;
+    }
+
+    /**
+     * Add likes
+     *
+     * @param \FaceManga\MainBundle\Entity\User $likes
+     * @return Anime
+     */
+    public function addLike(\FaceManga\MainBundle\Entity\User $likes)
+    {
+        $this->likes[] = $likes;
+
+        return $this;
+    }
+
+    /**
+     * Remove likes
+     *
+     * @param \FaceManga\MainBundle\Entity\User $likes
+     */
+    public function removeLike(\FaceManga\MainBundle\Entity\User $likes)
+    {
+        $this->likes->removeElement($likes);
+    }
+
+    /**
+     * Get likes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLikes()
+    {
+        return $this->likes;
+    }
 }

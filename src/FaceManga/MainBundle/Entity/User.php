@@ -12,5 +12,42 @@ class User extends BaseUser
     {
         parent::__construct();
     }
-    
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $likes;
+
+    /**
+     * Add likes
+     *
+     * @param \FaceManga\MainBundle\Entity\Anime $likes
+     * @return User
+     */
+    public function addLike(\FaceManga\MainBundle\Entity\Anime $likes)
+    {
+        $this->likes[] = $likes;
+
+        return $this;
     }
+
+    /**
+     * Remove likes
+     *
+     * @param \FaceManga\MainBundle\Entity\Anime $likes
+     */
+    public function removeLike(\FaceManga\MainBundle\Entity\Anime $likes)
+    {
+        $this->likes->removeElement($likes);
+    }
+
+    /**
+     * Get likes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLikes()
+    {
+        return $this->likes;
+    }
+}

@@ -22,4 +22,16 @@ FaceManga\MainBundle\Entity\Anime:
             type: text
         view_count:
             type: integer
+    manyToMany:
+        likes:
+            targetEntity: User
+            inversedBy: likes
+            joinTable:
+                name: animes_likes
+                joinColumns:
+                    user_id:
+                        referencedColumnId: id
+                inverseJoinColumns:
+                    anime_id:
+                        referencedColumnId: id
     lifecycleCallbacks: {  }

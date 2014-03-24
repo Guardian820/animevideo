@@ -5,9 +5,26 @@
 {% block content %}
     <legend>
         {{ anime.name }}
-        {% if is_granted('DELETE', anime) %}
-            <button class="pull-right btn btn-danger" data-toggle="modal" data-target="#delete">{{ icon('trash') }}</button>
-        {% endif %}
+        <div class="pull-right">
+            {% if is_granted('ROLE_USER') and not is_granted('OWNER', anime) %}
+                <button id="like-switch" data-likes="{{ anime.likes|length }}" data-id="{{ anime.id }}" type="button" class="btn btn-primary" data-loading-text="{{ 'show_anime.like.ajax_loading'|trans }}">
+                    <span class="badge">{{ anime.likes|length }}</span>
+                    {% if anime.likes.contains(app.user) %}
+                        {{ icon('thumbs-down') }}
+                    {% else %}
+                        {{ icon('thumbs-up') }}
+                    {% endif %}
+                </button>
+            {% else %}
+                <button class="btn btn-primary" data-toggle="tooltip" title="{{ 'show_anime.like.disabled_because_owner'|trans }}" data-placement="bottom">
+                    <span class="badge">{{ anime.likes|length }}</span>
+                </button>
+            {% endif %}
+            {% if is_granted('DELETE', anime) %}
+                &nbsp;&nbsp;
+                <button class="btn btn-danger" data-toggle="modal" data-target="#delete">{{ icon('trash') }}</button>
+            {% endif %}
+        </div>
     </legend>
     <div class="row">
         <div class="col-md-3">
@@ -79,4 +96,30 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#like-switch').click(function() {
+                var like_switch = $(this);
+                like_switch.button('loading');
+                $.ajax('{{ url('facemanga_main_ajax_switchlike') }}', {data: {id: like_switch.attr('data-id')}})
+                    .fail(function() {
+                        like_switch.button('reset');
+                
+                        var alert = '{{ macro.alert('show_anime.like.ajax_failed'|trans, 'danger')|e('js') }}';
+                        $('#alert-placeholder').append(alert);
+                    })
+                    .done(function(data) {
+                        like_switch.button('reset');
+                        var label = '<span class="badge">' + data['current-likes']  +  '</span>&nbsp;'
+                            + '<span class="glyphicon glyphicon-' + data['new-icon'] + '"></span>';
+                        
+                        like_switch.html(label);
+                    });
+            });
+        });
+    </script>
 {% endblock %}

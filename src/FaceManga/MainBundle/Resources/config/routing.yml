@@ -17,3 +17,7 @@ facemanga_main_anime_delete:
 facemanga_main_ajax_anime:
     pattern: /ajax/anime
     defaults: { _controller: FaceMangaMainBundle:Ajax:anime }
+
+facemanga_main_ajax_switchlike:
+    pattern: /ajax/switchlike
+    defaults: { _controller: FaceMangaMainBundle:Ajax:switchLike }

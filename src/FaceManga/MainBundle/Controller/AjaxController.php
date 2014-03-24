@@ -5,7 +5,9 @@ namespace FaceManga\MainBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PropertyAccess\PropertyAccess;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 class AjaxController extends Controller
 {
@@ -27,6 +29,42 @@ class AjaxController extends Controller
         $this->save($anime);
         
         return new JsonResponse();
+    }
+    
+    public function switchLikeAction(Request $request)
+    {
+        if (!$this->get('security.context')->isGranted('ROLE_USER')) {
+            return Response(null, Response::HTTP_FORBIDDEN);
+        }
+        $repo = $this->getDoctrine()->getRepository('FaceMangaMainBundle:Anime');
+        
+        $id = $request->query->get('id');
+        
+        $anime = $repo->findOneById($id);
+        
+        if (!$anime) {
+            return ResourceNotFoundException();
+        }
+        
+        if ($this->get('security.context')->isGranted('OWNER', $anime)) {
+            return Response(null, Response::HTTP_FORBIDDEN);
+        }
+        
+        $user = $this->get('security.context')->getToken()->getUser();
+        if ($user->getLikes()->contains($anime)) {
+            $anime->removeLike($user);
+            $newIcon = 'thumbs-up';
+        } else {
+            $anime->addLike($user);
+            $newIcon = 'thumbs-down';
+        }
+        
+        $this->getDoctrine()->getManager()->flush();
+        
+        return new JsonResponse(array(
+            'new-icon' => $newIcon,
+            'current-likes' => count($anime->getLikes())
+        ));
     }
     
     protected function save($object)

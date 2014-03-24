@@ -30,6 +30,10 @@ show_anime:
     genre: Genre
     description: Handlung
     viewCount: Aufrufe
+    like:
+        ajax_failed: Der Vorgang konnte leider nicht ausgeführt werden.
+        ajax_loading: Lade ...
+        disabled_because_owner: Deaktiviert, weil du der Ersteller bist.
     
 delete_anime:
     title: Wirklich löschen?
