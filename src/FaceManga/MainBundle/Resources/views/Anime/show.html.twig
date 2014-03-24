@@ -28,57 +28,29 @@
     </legend>
     <div class="row">
         <div class="col-md-3">
-            <img src="{{ asset('img/dummy.png') }}" /><br />
+            <img src="{{ asset('img/dummy.png') }}" /><br /><br />
+            
+            {# Genre #}
+            <b>{{ 'show_anime.genre'|trans }}</b><br />
+            {% for label in anime.genre %}
+                <span class="tag label label-info">{{ label }}</span>
+            {% endfor %}
+            <br /><br />
+            
+            {# View Count #}
+            <b>{{ 'show_anime.viewCount'|trans }}:</b>
+            {{ anime.viewCount }}
+            <br /><br />
+            
+            {# Episodes #}
+            <b>{{ 'show_anime.episodes'|trans }}:</b>
+            <a href="#" class="x-editable" data-name="episodes" data-type="text" data-pk="{{ anime.id }}" data-url="{{ url('facemanga_main_ajax_anime') }}">
+                {{ anime.episodes }}
+            </a>
         </div>
         <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-3 h4" style="text-align:right">
-                    {{ 'show_anime.name'|trans }}
-                </div>
-                <div class="col-md-9">
-                    <a href="#" class="x-editable" data-name="name" data-type="text" data-pk="{{ anime.id }}" data-url="{{ url('facemanga_main_ajax_anime') }}">
-                        {{ anime.name }}
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 h4" style="text-align:right">
-                    {{ 'show_anime.genre'|trans }}
-                </div>
-                <div class="col-md-9">
-                    {% for label in anime.genre %}
-                        <span class="tag label label-info">{{ label }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 h4" style="text-align:right">
-                    {{ 'show_anime.viewCount'|trans }}
-                </div>
-                <div class="col-md-9">
-                    {{ anime.viewCount }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 h4" style="text-align:right">
-                    {{ 'show_anime.episodes'|trans }}
-                </div>
-                <div class="col-md-9">
-                    <a href="#" class="x-editable" data-name="episodes" data-type="text" data-pk="{{ anime.id }}" data-url="{{ url('facemanga_main_ajax_anime') }}">
-                        {{ anime.episodes }}
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 h4" style="text-align:right">
-                    {{ 'show_anime.description'|trans }}
-                </div>
-                <div class="col-md-9">
-                    <a href="#" class="x-editable" data-name="description" data-type="textarea" data-pk="{{ anime.id }}" data-url="{{ url('facemanga_main_ajax_anime') }}">
-                        {{ anime.description }}
-                    </a>
-                </div>
-            </div>
+            <h3>{{ 'show_anime.description'|trans }}</h3>
+            <p>{{ anime.description }}</p>
         </div>
     </div>
     <div class="modal fade" id="delete">
