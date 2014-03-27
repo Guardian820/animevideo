@@ -55,6 +55,13 @@
                                             {{ app.user.username }}
                                         </a>
                                         <ul class="dropdown-menu pull-right" role="menu"> {# TODO: integrate with KnpMenuBundle #}
+                                            {% if is_granted('ROLE_ADMIN') %}
+                                                <li>
+                                                    <a href="{{ path('facemanga_main_admin_index') }}">
+                                                        {{ icon('lock')|raw }} {{ 'admin.title'|trans }}
+                                                    </a>
+                                                </li>
+                                            {% endif %}
                                             <li>
                                                 <a href="{{ path('fos_user_security_logout') }}">
                                                     {{ icon('log-out')|raw }} {{ 'logout'|trans }}

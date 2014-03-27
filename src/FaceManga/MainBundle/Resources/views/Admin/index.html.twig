@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'admin.title'|trans }}{% endblock %}
+
+{% block content %}
+    <ul class="nav nav-tabs">
+        <li>
+            <a href="{{ url('facemanga_main_admin_index') }}">
+                {{ 'admin.dashboard'|trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('facemanga_main_admin_index') }}">
+                {{ 'admin.dashboard'|trans }}
+            </a>
+        </li>
+    </ul>
+
+{% endblock %}

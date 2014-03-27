@@ -25,3 +25,10 @@ facemanga_main_ajax_anime:
 facemanga_main_ajax_switchlike:
     pattern: /ajax/switchlike
     defaults: { _controller: FaceMangaMainBundle:Ajax:switchLike }
+facemanga_main_admin_index:
+    pattern: /admin
+    defaults: { _controller: FaceMangaMainBundle:Admin:index }
+
+facemanga_main_admin_console:
+    pattern: /admin/console
+    defaults: { _controller: FaceMangaMainBundle:Admin:console }
