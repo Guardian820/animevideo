@@ -20,8 +20,6 @@ FaceManga\MainBundle\Entity\Anime:
             type: array
         description:
             type: text
-        view_count:
-            type: integer
         slug:
             type: string
             length: 128

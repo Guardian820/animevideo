@@ -15,16 +15,6 @@ class AnimeRepository extends EntityRepository
         return $qb->getQuery()->getSingleScalarResult();
     }
     
-    public function findPopular($limit, $offset = 0)
-    {
-        $qb = $this->createQueryBuilder('a')
-                ->orderBy('a.view_count', 'DESC')
-                ->setFirstResult($offset)
-                ->setMaxResults($limit);
-        
-        return $qb->getQuery()->getResult();
-    }
-    
     public function findRandom($count = 4)
     {
         $countRows = $this->count();

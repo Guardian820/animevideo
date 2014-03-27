@@ -29,7 +29,6 @@ show_anime:
     episodes: Episoden
     genre: Genre
     description: Handlung
-    viewCount: Aufrufe
     delete: Löschen
     edit: Bearbeiten
     like:

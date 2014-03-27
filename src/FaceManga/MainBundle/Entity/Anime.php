@@ -164,34 +164,7 @@ class Anime
     {
         return $this->description;
     }
-    /**
-     * @var integer
-     */
-    private $view_count = 0;
 
-
-    /**
-     * Set view_counter
-     *
-     * @param integer $viewCounter
-     * @return Anime
-     */
-    public function increaseViewCount()
-    {
-        $this->view_count++;
-    
-        return $this;
-    }
-
-    /**
-     * Get view_counter
-     *
-     * @return integer 
-     */
-    public function getViewCount()
-    {
-        return $this->view_count;
-    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */

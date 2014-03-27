@@ -12,7 +12,8 @@ class DashboardController extends Controller
         
         return $this->render('FaceMangaMainBundle:Dashboard:index.html.twig', array(
             'anime_count' => $repo->count(),
-            'popular_animes' => $repo->findPopular(4)
+            // TODO: sort this by like count, but since I've currently not found a way to do so, we sort by random
+            'popular_animes' => $repo->findRandom(4)
         ));
         
     }
