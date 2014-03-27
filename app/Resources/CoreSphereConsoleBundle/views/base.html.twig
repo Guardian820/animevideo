@@ -1,0 +1,11 @@
+{% extends 'FaceMangaMainBundle:Admin:base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/coresphereconsole/css/base.css') }}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    {% block body '' %}
+{% endblock %}
