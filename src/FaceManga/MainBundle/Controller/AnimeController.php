@@ -55,6 +55,36 @@ class AnimeController extends Controller
         ));
     }
     
+    public function editAction($slug, Request $request)
+    {
+        $repo = $this->getDoctrine()->getRepository('FaceMangaMainBundle:Anime');
+        
+        $anime = $repo->findOneBySlug($slug);
+        if (!$anime) {
+            throw new NotFoundHttpException('Der angeforderte Anime wurde nicht gefunden!');
+        }
+        
+        $form = $this->createForm('anime', $anime, array(
+            'show_legend' => true,
+            'label' => $this->get('translator')->trans('show_anime.edit')
+        ));
+        
+        $form->handleRequest($request);
+        
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            
+            return $this->redirect($this->generateUrl('facemanga_main_anime_show', array(
+                'slug' => $anime->getSlug()
+            )));
+        }
+        
+        return $this->render('FaceMangaMainBundle:Anime:edit.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+    
     public function deleteAction($id)
     {   
         $repo = $this->getDoctrine()->getRepository('FaceMangaMainBundle:Anime');

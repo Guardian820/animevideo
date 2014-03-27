@@ -20,9 +20,30 @@
                     <span class="badge">{{ anime.likes|length }}</span>
                 </button>
             {% endif %}
-            {% if is_granted('DELETE', anime) %}
+            {#{% if is_granted('DELETE', anime) %}
                 &nbsp;&nbsp;
                 <button class="btn btn-danger" data-toggle="modal" data-target="#delete">{{ icon('trash') }}</button>
+            {% endif %}#}
+            {% if is_granted('EDIT', anime) %}
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        {{ icon('cog') }} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href="{{ url('facemanga_main_anime_edit', {'slug': anime.slug}) }}">
+                                {{ icon('pencil') }} {{ 'show_anime.edit'|trans }}
+                            </a>
+                        </li>
+                        {% if is_granted('DELETE', anime) %}
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#delete">
+                                    {{ icon('trash') }} {{ 'show_anime.delete'|trans }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
             {% endif %}
         </div>
     </legend>

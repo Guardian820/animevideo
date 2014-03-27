@@ -30,6 +30,8 @@ show_anime:
     genre: Genre
     description: Handlung
     viewCount: Aufrufe
+    delete: Löschen
+    edit: Bearbeiten
     like:
         ajax_failed: Der Vorgang konnte leider nicht ausgeführt werden.
         ajax_loading: Lade ...

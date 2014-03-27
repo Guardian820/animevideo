@@ -10,6 +10,10 @@ facemanga_main_anime_show:
     pattern: /anime/{slug}
     defaults: { _controller: FaceMangaMainBundle:Anime:show }
     
+facemanga_main_anime_edit:
+    pattern: /edit/{slug}
+    defaults: { _controller: FaceMangaMainBundle:Anime:edit }
+    
 facemanga_main_anime_delete:
     pattern: /delete/{id}
     defaults: { _controller: FaceMangaMainBundle:Anime:delete }
