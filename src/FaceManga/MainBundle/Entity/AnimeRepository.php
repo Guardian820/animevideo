@@ -23,11 +23,13 @@ class AnimeRepository extends EntityRepository
         for ($i = 1; $i <= $count; $i++) {
             $id = rand(1, $countRows);
             
-            $animes[] = $this->createQueryBuilder('a')
-                    ->where('a.id = :id')
-                    ->setParameter('id', $id)
-                    ->getQuery()
-                    ->getSingleResult();
+            try {
+                $animes[] = $this->createQueryBuilder('a')
+                        ->where('a.id = :id')
+                        ->setParameter('id', $id)
+                        ->getQuery()
+                        ->getSingleResult();
+            } catch (\Doctrine\ORM\NoResultException $e) {}
         }
         
         return $animes;
