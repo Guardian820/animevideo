@@ -22,7 +22,7 @@
         <b class="h4">{{ 'dashboard.popular_animes'|trans|raw }}</b>
         <div class="row">
             {% for anime in popular_animes %}
-                <a href="{{ url('facemanga_main_anime_show', {'id': anime.id}) }}">
+                <a href="{{ url('facemanga_main_anime_show', {'slug': anime.slug}) }}">
                     <div class="col-md-3">
                         <img src="/img/dummy.png" /><br />
                         {{ anime.name }}

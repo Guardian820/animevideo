@@ -7,7 +7,7 @@ facemanga_main_anime_create:
     defaults: { _controller: FaceMangaMainBundle:Anime:create }
     
 facemanga_main_anime_show:
-    pattern: /anime/{id}
+    pattern: /anime/{slug}
     defaults: { _controller: FaceMangaMainBundle:Anime:show }
     
 facemanga_main_anime_delete:

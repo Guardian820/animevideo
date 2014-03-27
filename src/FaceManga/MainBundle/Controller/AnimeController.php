@@ -38,11 +38,11 @@ class AnimeController extends Controller
         ));
     }
     
-    public function showAction($id)
+    public function showAction($slug)
     {
         $repo = $this->getDoctrine()->getRepository('FaceMangaMainBundle:Anime');
         
-        $anime = $repo->findOneById($id);
+        $anime = $repo->findOneBySlug($slug);
         if (!$anime) {
             throw new NotFoundHttpException('Der angeforderte Anime wurde nicht gefunden!');
         }

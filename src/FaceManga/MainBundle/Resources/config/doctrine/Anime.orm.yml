@@ -22,6 +22,18 @@ FaceManga\MainBundle\Entity\Anime:
             type: text
         view_count:
             type: integer
+        slug:
+            type: string
+            length: 128
+            gedmo:
+                slug:
+                    separator: _
+                    style: camel
+                    fields:
+                      - name
+    indexes:
+        search_idx:
+            columns: slug
     manyToMany:
         likes:
             targetEntity: User
