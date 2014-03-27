@@ -33,7 +33,8 @@
         "msurguy/ladda-bootstrap": "~0.1.0",
         "vitalets/x-editable": "~1.5.0",
         "doctrine/migrations": "dev-master",
-        "doctrine/doctrine-migrations-bundle": "dev-master"
+        "doctrine/doctrine-migrations-bundle": "dev-master",
+        "problematic/acl-manager-bundle": "dev-master"
     },
     "repositories": [
         {

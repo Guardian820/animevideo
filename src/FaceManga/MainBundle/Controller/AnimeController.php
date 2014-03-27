@@ -7,8 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
-use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
 use Symfony\Component\Security\Acl\Permission\MaskBuilder;
 
 class AnimeController extends Controller
@@ -29,19 +27,8 @@ class AnimeController extends Controller
             $em->persist($anime);
             $em->flush();
             
-            // create the ACL
-            $aclProvider = $this->get('security.acl.provider');
-            $objectIdentity = ObjectIdentity::fromDomainObject($anime);
-            $acl = $aclProvider->createAcl($objectIdentity);
-            
-            // retrieving the security identity of the currently logged-in user
-            $securityContext = $this->get('security.context');
-            $user = $securityContext->getToken()->getUser();
-            $securityIdentity = UserSecurityIdentity::fromAccount($user);
-            
-            // grant owner access
-            $acl->insertObjectAce($securityIdentity, MaskBuilder::MASK_OWNER);
-            $aclProvider->updateAcl($acl);
+            $aclManager = $this->get('problematic.acl_manager');
+            $aclManager->setObjectPermission($anime, MaskBuilder::MASK_OWNER, $this->getUser());
             
             return $this->redirect($this->generateUrl('facemanga_main_dashboard'));
         }

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Problematic\AclManagerBundle\ProblematicAclManagerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
