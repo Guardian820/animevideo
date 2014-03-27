@@ -71,7 +71,6 @@ mopa_bootstrap:
         templating: true
         render_fieldset: true
         show_legend: true
-        
     
 fos_user:
     db_driver: orm
@@ -83,3 +82,7 @@ stof_doctrine_extensions:
     orm:
         default:
             sluggable: true
+
+simple_things_entity_audit:
+    audited_entities:
+        - FaceManga\MainBundle\Entity\Anime

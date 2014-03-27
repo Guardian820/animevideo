@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Problematic\AclManagerBundle\ProblematicAclManagerBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -35,7 +35,8 @@
         "doctrine/migrations": "dev-master",
         "doctrine/doctrine-migrations-bundle": "dev-master",
         "problematic/acl-manager-bundle": "dev-master",
-        "stof/doctrine-extensions-bundle": "~1.1@dev"
+        "stof/doctrine-extensions-bundle": "~1.1@dev",
+        "simplethings/entity-audit-bundle": "dev-master"
     },
     "repositories": [
         {
