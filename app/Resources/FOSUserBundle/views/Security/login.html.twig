@@ -2,7 +2,7 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block body %}
+{% block outer_body %}
     <div class="container">
         {% if error %}
             {% if error|preg_match('/sqlstate/i') %}
