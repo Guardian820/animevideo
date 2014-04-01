@@ -21,7 +21,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block outer_body %}
+        {% block body %}
             {% block navbar %}
                 {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, staticTop: false, inverse: false } %}
                     {% block brand %}

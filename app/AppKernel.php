@@ -24,7 +24,6 @@ class AppKernel extends Kernel
             new Problematic\AclManagerBundle\ProblematicAclManagerBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
-            new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
