@@ -103,6 +103,11 @@ class AnimeController extends Controller
         
         $em = $this->getDoctrine()->getManager();
         $em->remove($anime);
+        $this->get('logger')->debug(sprintf('Removed anime with ID %d', $anime->getId()));
+        
+        $this->get('problematic.acl_manager')->deleteAclFor($anime);
+        $this->get('logger')->debug(sprintf('Removed anime\'s ACL (ID: $d)', $anime->getId()));
+        
         $em->flush();
         
         return $this->redirect($this->generateUrl('facemanga_main_dashboard'));
