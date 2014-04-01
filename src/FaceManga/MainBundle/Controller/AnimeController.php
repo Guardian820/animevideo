@@ -5,6 +5,7 @@ namespace FaceManga\MainBundle\Controller;
 use FaceManga\MainBundle\Entity\Anime;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Acl\Permission\MaskBuilder;
@@ -60,6 +61,13 @@ class AnimeController extends Controller
         if (!$anime) {
             throw new NotFoundHttpException('Der angeforderte Anime wurde nicht gefunden!');
         }
+        
+        if (!$this->get('security.context')->isGranted('EDIT', $anime)) {
+            $this->get('logger')->error(sprintf('No \'EDIT\' permission on anime with ID %d.', $anime->getId()));
+            return new Response(null, Response::HTTP_FORBIDDEN);
+        }
+        
+        $this->get('logger')->debug(sprintf('Checked for \'EDIT\' permission on anime with ID %d.', $anime->getId()));
         
         $form = $this->createForm('anime', $anime, array(
             'show_legend' => true,
