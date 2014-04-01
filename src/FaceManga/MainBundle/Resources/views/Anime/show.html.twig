@@ -15,8 +15,12 @@
                         {{ icon('thumbs-up') }}
                     {% endif %}
                 </button>
-            {% else %}
+            {% elseif is_granted('OWNER', anime) %}
                 <button class="btn btn-primary" data-toggle="tooltip" title="{{ 'show_anime.like.disabled_because_owner'|trans }}" data-placement="bottom">
+                    <span class="badge">{{ anime.likes|length }}</span>
+                </button>
+            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                <button class="btn btn-primary" data-toggle="tooltip" title="{{ 'show_anime.like.disabled_because_anonymous'|trans }}" data-placement="bottom">
                     <span class="badge">{{ anime.likes|length }}</span>
                 </button>
             {% endif %}

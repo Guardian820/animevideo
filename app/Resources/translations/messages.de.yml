@@ -35,6 +35,7 @@ show_anime:
         ajax_failed: Der Vorgang konnte leider nicht ausgeführt werden.
         ajax_loading: Lade ...
         disabled_because_owner: Deaktiviert, weil du der Ersteller bist.
+        disabled_because_anonymous: Bitte logge dich ein, um diesen Anime zu loggen.
     
 delete_anime:
     title: Wirklich löschen?
