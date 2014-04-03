@@ -25,8 +25,8 @@ FaceManga\MainBundle\Entity\Anime:
             length: 128
             gedmo:
                 slug:
-                    separator: _
-                    style: camel
+                    separator: '-'
+                    style: default
                     fields:
                       - name
     indexes:
