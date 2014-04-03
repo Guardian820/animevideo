@@ -8,18 +8,30 @@ FaceManga\MainBundle\Entity\Anime:
             id: true
             generator:
                 strategy: AUTO
+    gedmo:
+        loggable: true
     fields:
         name:
             type: string
             length: 255
+            gedmo:
+                - versioned
         year:
             type: integer
+            gedmo:
+                - versioned
         episodes:
             type: integer
+            gedmo:
+                - versioned
         genre:
             type: array
+            gedmo:
+                - versioned
         description:
             type: text
+            gedmo:
+                - versioned
         slug:
             type: string
             length: 128
