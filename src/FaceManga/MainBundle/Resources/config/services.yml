@@ -23,3 +23,10 @@ services:
         class: Jasny\Twig\PcreExtension
         tags:
           - { name: twig.extension }
+          
+    facemanga.main.voter.anime.view:
+        class: FaceManga\MainBundle\Security\Voter\AnimeViewVoter
+        calls:
+            - [setLogger, ["@logger"]]
+        tags:
+            - { name: security.voter }
