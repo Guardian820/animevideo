@@ -15,14 +15,17 @@
                         {{ icon('thumbs-up') }}
                     {% endif %}
                 </button>
-            {% elseif is_granted('OWNER', anime) %}
-                <button class="btn btn-primary" data-toggle="tooltip" title="{{ 'show_anime.like.disabled_because_owner'|trans }}" data-placement="bottom">
-                    <span class="badge">{{ anime.likes|length }}</span>
-                </button>
-            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                <button class="btn btn-primary" data-toggle="tooltip" title="{{ 'show_anime.like.disabled_because_anonymous'|trans }}" data-placement="bottom">
-                    <span class="badge">{{ anime.likes|length }}</span>
-                </button>
+            {% else %}
+                {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                    {% set tooltip_msg = 'show_anime.like.disabled_because_anonymous'|trans %}
+                {% elseif is_granted('OWNER', anime) %}
+                    {% set tooltip_msg = 'show_anime.like.disabled_because_owner'|trans %}
+                {% endif %}
+                <div data-toggle="tooltip" title="{{ tooltip_msg }}" data-placement="bottom">
+                    <button class="btn btn-primary" disabled>
+                        <span class="badge">{{ anime.likes|length }}</span>
+                    </button>
+                </div>
             {% endif %}
             {#{% if is_granted('DELETE', anime) %}
                 &nbsp;&nbsp;
